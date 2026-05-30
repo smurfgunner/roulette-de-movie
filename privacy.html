@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roulette de Movie – Privacy Policy</title>
+  <style>
+    :root {
+      --bg: #0f0f0f;
+      --surface: #1a1a1a;
+      --border: #2a2a2a;
+      --text: #f0f0f0;
+      --muted: #888;
+      --accent: #e5c46e;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      padding: 2rem 1.25rem;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    nav {
+      margin-bottom: 2.5rem;
+    }
+
+    nav a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    nav a:hover { text-decoration: underline; }
+
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.4rem;
+    }
+
+    .updated {
+      color: var(--muted);
+      font-size: 0.875rem;
+      margin-bottom: 2.5rem;
+    }
+
+    h2 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin: 2rem 0 0.6rem;
+    }
+
+    p {
+      color: #ccc;
+      margin-bottom: 0.75rem;
+    }
+
+    ul {
+      color: #ccc;
+      padding-left: 1.4rem;
+      margin-bottom: 0.75rem;
+    }
+
+    ul li { margin-bottom: 0.3rem; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0.75rem 0 1rem;
+      font-size: 0.875rem;
+    }
+
+    th {
+      text-align: left;
+      color: var(--muted);
+      font-weight: 500;
+      padding: 0.5rem 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    td {
+      color: #ccc;
+      padding: 0.5rem 0.75rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding-top: 1.5rem;
+      margin-top: 3rem;
+      color: var(--muted);
+      font-size: 0.82rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <nav><a href="index.html">← Back to Support</a></nav>
+
+  <h1>Privacy Policy</h1>
+  <p class="updated">Last updated: May 30, 2026</p>
+
+  <p>This Privacy Policy describes how Roulette de Movie handles your information. We believe privacy is a right, so this policy is intentionally simple: we do not collect, share, or sell your personal data.</p>
+
+  <h2>1. Overview</h2>
+  <p>Roulette de Movie is a movie-picker app that lets you build a personal watchlist and spin a wheel to choose what to watch next. All data you create in the app stays on your device. We do not operate any servers, create any user accounts, or store any information about you remotely.</p>
+
+  <h2>2. Information We Do Not Collect</h2>
+  <p>We do not collect:</p>
+  <ul>
+    <li>Your name, email address, or any account credentials</li>
+    <li>Location or GPS data</li>
+    <li>Device identifiers (IDFA, IDFV, device name)</li>
+    <li>Contacts, calendar, or health data</li>
+    <li>Camera or microphone input</li>
+    <li>Clipboard contents</li>
+    <li>Crash reports or diagnostic data sent to us</li>
+    <li>Usage analytics or behavioral data</li>
+  </ul>
+  <p>The app requests <strong>no device permissions</strong> — it does not ask to access your camera, photos, location, contacts, microphone, Bluetooth, or any other sensitive capability.</p>
+
+  <h2>3. Information Stored on Your Device</h2>
+  <p>The following data is created when you use the app and is stored <strong>only on your device</strong>, never transmitted to us:</p>
+  <table>
+    <thead>
+      <tr><th>Data</th><th>What it is</th><th>Where it's stored</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Movie collection</td><td>Titles, release years, and watched/unwatched status</td><td>On-device (CoreData)</td></tr>
+      <tr><td>Movie poster images</td><td>Cached artwork for movies in your collection</td><td>On-device (CoreData)</td></tr>
+      <tr><td>Date added</td><td>The date you added each movie</td><td>On-device (CoreData)</td></tr>
+      <tr><td>Onboarding status</td><td>Whether you completed the intro screen</td><td>On-device (UserDefaults)</td></tr>
+    </tbody>
+  </table>
+
+  <h2>4. Network Requests — Movie Search</h2>
+  <p>When you search for a movie, the text you type is sent as a search query to a third-party movie metadata service to return matching results. This is the only outbound network request the app makes.</p>
+  <ul>
+    <li><strong>What is sent:</strong> Your search query text</li>
+    <li><strong>What is received:</strong> Movie titles, release years, and poster image URLs</li>
+    <li><strong>Purpose:</strong> To find and display matching movies so you can add them to your collection</li>
+  </ul>
+  <p>No personal information is included in these requests — only the text you type in the search field.</p>
+
+  <h2>5. Third-Party Services</h2>
+  <p>Roulette de Movie uses no third-party analytics, advertising, or crash-reporting SDKs. The app is built entirely on Apple's native frameworks. The only third-party interaction is the movie search API described in Section 4.</p>
+
+  <h2>6. Children's Privacy</h2>
+  <p>Roulette de Movie does not knowingly collect any information from children under the age of 13. The app collects no personal data from anyone, making it safe for all ages.</p>
+
+  <h2>7. Data Security</h2>
+  <p>Because all your data is stored on your device, its security is governed by your device's built-in protections — screen lock, Face ID / Touch ID, and iOS data encryption.</p>
+
+  <h2>8. Your Rights</h2>
+  <p>Since we store no data about you on any server, there is nothing for us to access, export, or delete on your behalf. To remove all data associated with the app, use the delete option within the app or uninstall Roulette de Movie from your device.</p>
+
+  <h2>9. Changes to This Policy</h2>
+  <p>If this policy changes materially, we will update the "Last updated" date at the top of this document and notify users through an app update where appropriate.</p>
+
+  <h2>10. Contact</h2>
+  <p>If you have questions about this Privacy Policy, please contact:<br/>
+  <a href="mailto:vahidgr@yahoo.com">vahidgr@yahoo.com</a></p>
+
+  <footer>
+    <p>© 2026 Vahid Ghanbarpour. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
