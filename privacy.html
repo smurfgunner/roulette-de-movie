@@ -28,6 +28,9 @@
     }
 
     nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       margin-bottom: 2.5rem;
     }
 
@@ -38,6 +41,24 @@
     }
 
     nav a:hover { text-decoration: underline; }
+
+    .lang-selector {
+      appearance: none;
+      -webkit-appearance: none;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.82rem;
+      padding: 0.35rem 0.6rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .lang-selector:hover {
+      border-color: var(--accent);
+      color: var(--text);
+    }
 
     h1 {
       font-size: 1.75rem;
@@ -120,7 +141,21 @@
 </head>
 <body>
 
-  <nav><a href="index.html" data-i18n="navBack">← Back to Support</a></nav>
+  <nav>
+    <a href="index.html" data-i18n="navBack">← Back to Support</a>
+    <select class="lang-selector" id="langSelect">
+      <option value="en">English</option>
+      <option value="ar">العربية</option>
+      <option value="zh-Hans">中文</option>
+      <option value="nl">Nederlands</option>
+      <option value="fr">Français</option>
+      <option value="de">Deutsch</option>
+      <option value="it">Italiano</option>
+      <option value="ko">한국어</option>
+      <option value="pt-PT">Português</option>
+      <option value="es">Español</option>
+    </select>
+  </nav>
 
   <h1 data-i18n="pageTitle">Privacy Policy</h1>
   <p class="updated" data-i18n="updated">Last updated: May 30, 2026</p>
@@ -785,6 +820,15 @@
       if (window.__lang !== 'en') {
         document.querySelectorAll('a[href="index.html"]').forEach(function (a) {
           a.href = 'index.html?lang=' + window.__lang;
+        });
+      }
+      var sel = document.getElementById('langSelect');
+      if (sel) {
+        sel.value = window.__lang;
+        sel.addEventListener('change', function () {
+          var params = new URLSearchParams(window.location.search);
+          params.set('lang', this.value);
+          window.location.search = params.toString();
         });
       }
     });

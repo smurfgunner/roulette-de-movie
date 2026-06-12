@@ -121,6 +121,30 @@
     }
 
     footer a { color: var(--muted); text-decoration: underline; }
+
+    .top-nav {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 1rem;
+    }
+
+    .lang-selector {
+      appearance: none;
+      -webkit-appearance: none;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.82rem;
+      padding: 0.35rem 0.6rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .lang-selector:hover {
+      border-color: var(--accent);
+      color: var(--text);
+    }
   </style>
   <script>
     (function () {
@@ -135,6 +159,21 @@
   </script>
 </head>
 <body>
+
+  <nav class="top-nav">
+    <select class="lang-selector" id="langSelect">
+      <option value="en">English</option>
+      <option value="ar">العربية</option>
+      <option value="zh-Hans">中文</option>
+      <option value="nl">Nederlands</option>
+      <option value="fr">Français</option>
+      <option value="de">Deutsch</option>
+      <option value="it">Italiano</option>
+      <option value="ko">한국어</option>
+      <option value="pt-PT">Português</option>
+      <option value="es">Español</option>
+    </select>
+  </nav>
 
   <header>
     <div class="icon">🎬</div>
@@ -320,6 +359,15 @@
       if (window.__lang !== 'en') {
         document.querySelectorAll('a[href="privacy.html"]').forEach(function (a) {
           a.href = 'privacy.html?lang=' + window.__lang;
+        });
+      }
+      var sel = document.getElementById('langSelect');
+      if (sel) {
+        sel.value = window.__lang;
+        sel.addEventListener('change', function () {
+          var params = new URLSearchParams(window.location.search);
+          params.set('lang', this.value);
+          window.location.search = params.toString();
         });
       }
     });
