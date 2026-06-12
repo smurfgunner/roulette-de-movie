@@ -106,78 +106,689 @@
       text-align: center;
     }
   </style>
+  <script>
+    (function () {
+      var supported = ['ar', 'zh-Hans', 'nl', 'fr', 'de', 'it', 'ko', 'pt-PT', 'es', 'en'];
+      var params = new URLSearchParams(window.location.search);
+      var lang = params.get('lang') || 'en';
+      if (supported.indexOf(lang) === -1) lang = 'en';
+      document.documentElement.lang = lang;
+      if (lang === 'ar') document.documentElement.dir = 'rtl';
+      window.__lang = lang;
+    })();
+  </script>
 </head>
 <body>
 
-  <nav><a href="index.html">← Back to Support</a></nav>
+  <nav><a href="index.html" data-i18n="navBack">← Back to Support</a></nav>
 
-  <h1>Privacy Policy</h1>
-  <p class="updated">Last updated: May 30, 2026</p>
+  <h1 data-i18n="pageTitle">Privacy Policy</h1>
+  <p class="updated" data-i18n="updated">Last updated: May 30, 2026</p>
 
-  <p>This Privacy Policy describes how Roulette de Movie handles your information. We believe privacy is a right, so this policy is intentionally simple: we do not collect, share, or sell your personal data.</p>
+  <p data-i18n="intro">This Privacy Policy describes how Roulette de Movie handles your information. We believe privacy is a right, so this policy is intentionally simple: we do not collect, share, or sell your personal data.</p>
 
-  <h2>1. Overview</h2>
-  <p>Roulette de Movie is a movie-picker app that lets you build a personal watchlist and spin a wheel to choose what to watch next. All data you create in the app stays on your device. We do not operate any servers, create any user accounts, or store any information about you remotely.</p>
+  <h2 data-i18n="h2_1">1. Overview</h2>
+  <p data-i18n="p1">Roulette de Movie is a movie-picker app that lets you build a personal watchlist and spin a wheel to choose what to watch next. All data you create in the app stays on your device. We do not operate any servers, create any user accounts, or store any information about you remotely.</p>
 
-  <h2>2. Information We Do Not Collect</h2>
-  <p>We do not collect:</p>
+  <h2 data-i18n="h2_2">2. Information We Do Not Collect</h2>
+  <p data-i18n="p2">We do not collect:</p>
   <ul>
-    <li>Your name, email address, or any account credentials</li>
-    <li>Location or GPS data</li>
-    <li>Device identifiers (IDFA, IDFV, device name)</li>
-    <li>Contacts, calendar, or health data</li>
-    <li>Camera or microphone input</li>
-    <li>Clipboard contents</li>
-    <li>Crash reports or diagnostic data sent to us</li>
-    <li>Usage analytics or behavioral data</li>
+    <li data-i18n="li2_1">Your name, email address, or any account credentials</li>
+    <li data-i18n="li2_2">Location or GPS data</li>
+    <li data-i18n="li2_3">Device identifiers (IDFA, IDFV, device name)</li>
+    <li data-i18n="li2_4">Contacts, calendar, or health data</li>
+    <li data-i18n="li2_5">Camera or microphone input</li>
+    <li data-i18n="li2_6">Clipboard contents</li>
+    <li data-i18n="li2_7">Crash reports or diagnostic data sent to us</li>
+    <li data-i18n="li2_8">Usage analytics or behavioral data</li>
   </ul>
-  <p>The app requests <strong>no device permissions</strong> — it does not ask to access your camera, photos, location, contacts, microphone, Bluetooth, or any other sensitive capability.</p>
+  <p data-i18n-html="p2b">The app requests <strong>no device permissions</strong> — it does not ask to access your camera, photos, location, contacts, microphone, Bluetooth, or any other sensitive capability.</p>
 
-  <h2>3. Information Stored on Your Device</h2>
-  <p>The following data is created when you use the app and is stored <strong>only on your device</strong>, never transmitted to us:</p>
+  <h2 data-i18n="h2_3">3. Information Stored on Your Device</h2>
+  <p data-i18n-html="p3">The following data is created when you use the app and is stored <strong>only on your device</strong>, never transmitted to us:</p>
   <table>
     <thead>
-      <tr><th>Data</th><th>What it is</th><th>Where it's stored</th></tr>
+      <tr>
+        <th data-i18n="thData">Data</th>
+        <th data-i18n="thWhat">What it is</th>
+        <th data-i18n="thWhere">Where it's stored</th>
+      </tr>
     </thead>
     <tbody>
-      <tr><td>Movie collection</td><td>Titles, release years, and watched/unwatched status</td><td>On-device (CoreData)</td></tr>
-      <tr><td>Movie poster images</td><td>Cached artwork for movies in your collection</td><td>On-device (CoreData)</td></tr>
-      <tr><td>Date added</td><td>The date you added each movie</td><td>On-device (CoreData)</td></tr>
-      <tr><td>Onboarding status</td><td>Whether you completed the intro screen</td><td>On-device (UserDefaults)</td></tr>
+      <tr>
+        <td data-i18n="tdMovieCollection">Movie collection</td>
+        <td data-i18n="tdMovieCollectionDesc">Titles, release years, and watched/unwatched status</td>
+        <td data-i18n="tdMovieCollectionStorage">On-device (CoreData)</td>
+      </tr>
+      <tr>
+        <td data-i18n="tdPosterImages">Movie poster images</td>
+        <td data-i18n="tdPosterImagesDesc">Cached artwork for movies in your collection</td>
+        <td data-i18n="tdPosterImagesStorage">On-device (CoreData)</td>
+      </tr>
+      <tr>
+        <td data-i18n="tdDateAdded">Date added</td>
+        <td data-i18n="tdDateAddedDesc">The date you added each movie</td>
+        <td data-i18n="tdDateAddedStorage">On-device (CoreData)</td>
+      </tr>
+      <tr>
+        <td data-i18n="tdOnboarding">Onboarding status</td>
+        <td data-i18n="tdOnboardingDesc">Whether you completed the intro screen</td>
+        <td data-i18n="tdOnboardingStorage">On-device (UserDefaults)</td>
+      </tr>
     </tbody>
   </table>
 
-  <h2>4. Network Requests — Movie Search</h2>
-  <p>When you search for a movie, the text you type is sent as a search query to a third-party movie metadata service to return matching results. This is the only outbound network request the app makes.</p>
+  <h2 data-i18n="h2_4">4. Network Requests — Movie Search</h2>
+  <p data-i18n="p4">When you search for a movie, the text you type is sent as a search query to a third-party movie metadata service to return matching results. This is the only outbound network request the app makes.</p>
   <ul>
-    <li><strong>What is sent:</strong> Your search query text</li>
-    <li><strong>What is received:</strong> Movie titles, release years, and poster image URLs</li>
-    <li><strong>Purpose:</strong> To find and display matching movies so you can add them to your collection</li>
+    <li data-i18n-html="li4_1"><strong>What is sent:</strong> Your search query text</li>
+    <li data-i18n-html="li4_2"><strong>What is received:</strong> Movie titles, release years, and poster image URLs</li>
+    <li data-i18n-html="li4_3"><strong>Purpose:</strong> To find and display matching movies so you can add them to your collection</li>
   </ul>
-  <p>No personal information is included in these requests — only the text you type in the search field.</p>
+  <p data-i18n="p4b">No personal information is included in these requests — only the text you type in the search field.</p>
 
-  <h2>5. Third-Party Services</h2>
-  <p>Roulette de Movie uses no third-party analytics, advertising, or crash-reporting SDKs. The app is built entirely on Apple's native frameworks. The only third-party interaction is the movie search API described in Section 4.</p>
+  <h2 data-i18n="h2_5">5. Third-Party Services</h2>
+  <p data-i18n="p5">Roulette de Movie uses no third-party analytics, advertising, or crash-reporting SDKs. The app is built entirely on Apple's native frameworks. The only third-party interaction is the movie search API described in Section 4.</p>
 
-  <h2>6. Children's Privacy</h2>
-  <p>Roulette de Movie does not knowingly collect any information from children under the age of 13. The app collects no personal data from anyone, making it safe for all ages.</p>
+  <h2 data-i18n="h2_6">6. Children's Privacy</h2>
+  <p data-i18n="p6">Roulette de Movie does not knowingly collect any information from children under the age of 13. The app collects no personal data from anyone, making it safe for all ages.</p>
 
-  <h2>7. Data Security</h2>
-  <p>Because all your data is stored on your device, its security is governed by your device's built-in protections — screen lock, Face ID / Touch ID, and iOS data encryption.</p>
+  <h2 data-i18n="h2_7">7. Data Security</h2>
+  <p data-i18n="p7">Because all your data is stored on your device, its security is governed by your device's built-in protections — screen lock, Face ID / Touch ID, and iOS data encryption.</p>
 
-  <h2>8. Your Rights</h2>
-  <p>Since we store no data about you on any server, there is nothing for us to access, export, or delete on your behalf. To remove all data associated with the app, use the delete option within the app or uninstall Roulette de Movie from your device.</p>
+  <h2 data-i18n="h2_8">8. Your Rights</h2>
+  <p data-i18n="p8">Since we store no data about you on any server, there is nothing for us to access, export, or delete on your behalf. To remove all data associated with the app, use the delete option within the app or uninstall Roulette de Movie from your device.</p>
 
-  <h2>9. Changes to This Policy</h2>
-  <p>If this policy changes materially, we will update the "Last updated" date at the top of this document and notify users through an app update where appropriate.</p>
+  <h2 data-i18n="h2_9">9. Changes to This Policy</h2>
+  <p data-i18n="p9">If this policy changes materially, we will update the "Last updated" date at the top of this document and notify users through an app update where appropriate.</p>
 
-  <h2>10. Contact</h2>
-  <p>If you have questions about this Privacy Policy, please contact:<br/>
-  <a href="mailto:vahidgr@yahoo.com">vahidgr@yahoo.com</a></p>
+  <h2 data-i18n="h2_10">10. Contact</h2>
+  <p data-i18n-html="p10">If you have questions about this Privacy Policy, please contact:<br/><a href="mailto:vahidgr@yahoo.com">vahidgr@yahoo.com</a></p>
 
   <footer>
-    <p>© 2026 Vahid Ghanbarpour. All rights reserved.</p>
+    <p data-i18n="footerCopyright">© 2026 Vahid Ghanbarpour. All rights reserved.</p>
   </footer>
+
+  <script>
+    var T = {
+      en: {
+        title:                   'Roulette de Movie – Privacy Policy',
+        navBack:                 '← Back to Support',
+        pageTitle:               'Privacy Policy',
+        updated:                 'Last updated: May 30, 2026',
+        intro:                   'This Privacy Policy describes how Roulette de Movie handles your information. We believe privacy is a right, so this policy is intentionally simple: we do not collect, share, or sell your personal data.',
+        h2_1:                    '1. Overview',
+        p1:                      'Roulette de Movie is a movie-picker app that lets you build a personal watchlist and spin a wheel to choose what to watch next. All data you create in the app stays on your device. We do not operate any servers, create any user accounts, or store any information about you remotely.',
+        h2_2:                    '2. Information We Do Not Collect',
+        p2:                      'We do not collect:',
+        li2_1:                   'Your name, email address, or any account credentials',
+        li2_2:                   'Location or GPS data',
+        li2_3:                   'Device identifiers (IDFA, IDFV, device name)',
+        li2_4:                   'Contacts, calendar, or health data',
+        li2_5:                   'Camera or microphone input',
+        li2_6:                   'Clipboard contents',
+        li2_7:                   'Crash reports or diagnostic data sent to us',
+        li2_8:                   'Usage analytics or behavioral data',
+        p2b:                     'The app requests <strong>no device permissions</strong> — it does not ask to access your camera, photos, location, contacts, microphone, Bluetooth, or any other sensitive capability.',
+        h2_3:                    '3. Information Stored on Your Device',
+        p3:                      'The following data is created when you use the app and is stored <strong>only on your device</strong>, never transmitted to us:',
+        thData:                  'Data',
+        thWhat:                  'What it is',
+        thWhere:                 'Where it’s stored',
+        tdMovieCollection:       'Movie collection',
+        tdMovieCollectionDesc:   'Titles, release years, and watched/unwatched status',
+        tdMovieCollectionStorage:'On-device (CoreData)',
+        tdPosterImages:          'Movie poster images',
+        tdPosterImagesDesc:      'Cached artwork for movies in your collection',
+        tdPosterImagesStorage:   'On-device (CoreData)',
+        tdDateAdded:             'Date added',
+        tdDateAddedDesc:         'The date you added each movie',
+        tdDateAddedStorage:      'On-device (CoreData)',
+        tdOnboarding:            'Onboarding status',
+        tdOnboardingDesc:        'Whether you completed the intro screen',
+        tdOnboardingStorage:     'On-device (UserDefaults)',
+        h2_4:                    '4. Network Requests — Movie Search',
+        p4:                      'When you search for a movie, the text you type is sent as a search query to a third-party movie metadata service to return matching results. This is the only outbound network request the app makes.',
+        li4_1:                   '<strong>What is sent:</strong> Your search query text',
+        li4_2:                   '<strong>What is received:</strong> Movie titles, release years, and poster image URLs',
+        li4_3:                   '<strong>Purpose:</strong> To find and display matching movies so you can add them to your collection',
+        p4b:                     'No personal information is included in these requests — only the text you type in the search field.',
+        h2_5:                    '5. Third-Party Services',
+        p5:                      'Roulette de Movie uses no third-party analytics, advertising, or crash-reporting SDKs. The app is built entirely on Apple’s native frameworks. The only third-party interaction is the movie search API described in Section 4.',
+        h2_6:                    '6. Children’s Privacy',
+        p6:                      'Roulette de Movie does not knowingly collect any information from children under the age of 13. The app collects no personal data from anyone, making it safe for all ages.',
+        h2_7:                    '7. Data Security',
+        p7:                      'Because all your data is stored on your device, its security is governed by your device’s built-in protections — screen lock, Face ID / Touch ID, and iOS data encryption.',
+        h2_8:                    '8. Your Rights',
+        p8:                      'Since we store no data about you on any server, there is nothing for us to access, export, or delete on your behalf. To remove all data associated with the app, use the delete option within the app or uninstall Roulette de Movie from your device.',
+        h2_9:                    '9. Changes to This Policy',
+        p9:                      'If this policy changes materially, we will update the “Last updated” date at the top of this document and notify users through an app update where appropriate.',
+        h2_10:                   '10. Contact',
+        p10:                     'If you have questions about this Privacy Policy, please contact:<br/><a href="mailto:vahidgr@yahoo.com">vahidgr@yahoo.com</a>',
+        footerCopyright:         '© 2026 Vahid Ghanbarpour. All rights reserved.'
+      },
+      ar: {
+        title:                   `Roulette de Movie – سياسة الخصوصية`,
+        navBack:                 `← العودة إلى الدعم`,
+        pageTitle:               `سياسة الخصوصية`,
+        updated:                 `آخر تحديث: 30 مايو 2026`,
+        intro:                   `تصف سياسة الخصوصية هذه كيفية تعامل Roulette de Movie مع معلوماتك. نؤمن بأن الخصوصية حق، لذا فإن هذه السياسة بسيطة عن قصد: نحن لا نجمع بياناتك الشخصية أو نشاركها أو نبيعها.`,
+        h2_1:                    `1. نظرة عامة`,
+        p1:                      `Roulette de Movie تطبيق لاختيار الأفلام يتيح لك بناء قائمة مشاهدة شخصية وتدوير عجلة لاختيار ما تشاهده. تبقى جميع البيانات التي تنشئها في التطبيق على جهازك. لا نُشغّل أي خوادم، ولا ننشئ حسابات مستخدمين، ولا نخزّن أي معلومات عنك عن بُعد.`,
+        h2_2:                    `2. المعلومات التي لا نجمعها`,
+        p2:                      `نحن لا نجمع:`,
+        li2_1:                   `اسمك أو عنوان بريدك الإلكتروني أو أي بيانات اعتماد للحساب`,
+        li2_2:                   `بيانات الموقع أو نظام تحديد المواقع GPS`,
+        li2_3:                   `معرّفات الجهاز (IDFA أو IDFV أو اسم الجهاز)`,
+        li2_4:                   `جهات الاتصال أو التقويم أو بيانات الصحة`,
+        li2_5:                   `إدخال الكاميرا أو الميكروفون`,
+        li2_6:                   `محتويات الحافظة`,
+        li2_7:                   `تقارير الأعطال أو بيانات التشخيص المرسلة إلينا`,
+        li2_8:                   `تحليلات الاستخدام أو البيانات السلوكية`,
+        p2b:                     `لا يطلب التطبيق <strong>أي أذونات للجهاز</strong> — فهو لا يطلب الوصول إلى الكاميرا أو الصور أو الموقع أو جهات الاتصال أو الميكروفون أو Bluetooth أو أي قدرة حساسة أخرى.`,
+        h2_3:                    `3. المعلومات المخزّنة على جهازك`,
+        p3:                      `البيانات التالية تُنشَأ عند استخدامك للتطبيق وتُخزَّن <strong>على جهازك فقط</strong>، ولا تُرسَل إلينا أبداً:`,
+        thData:                  `البيانات`,
+        thWhat:                  `ما هي`,
+        thWhere:                 `أين تُخزَّن`,
+        tdMovieCollection:       `مجموعة الأفلام`,
+        tdMovieCollectionDesc:   `العناوين وسنوات الإصدار وحالة المشاهدة`,
+        tdMovieCollectionStorage:`على الجهاز (CoreData)`,
+        tdPosterImages:          `صور ملصقات الأفلام`,
+        tdPosterImagesDesc:      `الأعمال الفنية المؤقتة للأفلام في مجموعتك`,
+        tdPosterImagesStorage:   `على الجهاز (CoreData)`,
+        tdDateAdded:             `تاريخ الإضافة`,
+        tdDateAddedDesc:         `التاريخ الذي أضفت فيه كل فيلم`,
+        tdDateAddedStorage:      `على الجهاز (CoreData)`,
+        tdOnboarding:            `حالة التهيئة`,
+        tdOnboardingDesc:        `ما إذا كنت قد أكملت شاشة المقدمة`,
+        tdOnboardingStorage:     `على الجهاز (UserDefaults)`,
+        h2_4:                    `4. طلبات الشبكة — البحث عن الأفلام`,
+        p4:                      `عند البحث عن فيلم، يُرسَل النص الذي تكتبه كاستعلام بحث إلى خدمة بيانات وصفية تابعة لجهة خارجية لإرجاع النتائج المطابقة. هذا هو طلب الشبكة الصادر الوحيد الذي يجريه التطبيق.`,
+        li4_1:                   `<strong>ما يُرسَل:</strong> نص استعلام البحث الخاص بك`,
+        li4_2:                   `<strong>ما يُستقبَل:</strong> عناوين الأفلام وسنوات الإصدار وعناوين URL للملصقات`,
+        li4_3:                   `<strong>الغرض:</strong> العثور على الأفلام المطابقة وعرضها لتتمكن من إضافتها إلى مجموعتك`,
+        p4b:                     `لا تتضمن هذه الطلبات أي معلومات شخصية — فقط النص الذي تكتبه في حقل البحث.`,
+        h2_5:                    `5. خدمات الجهات الخارجية`,
+        p5:                      `لا يستخدم Roulette de Movie أي حزم SDK للتحليلات أو الإعلانات أو الإبلاغ عن الأعطال من جهات خارجية. التطبيق مبني بالكامل على أطر عمل Apple الأصلية. التفاعل الوحيد مع جهات خارجية هو واجهة برمجة تطبيقات البحث عن الأفلام الموضحة في القسم 4.`,
+        h2_6:                    `6. خصوصية الأطفال`,
+        p6:                      `لا يجمع Roulette de Movie عن علم أي معلومات من الأطفال دون سن 13 عاماً. لا يجمع التطبيق أي بيانات شخصية من أي شخص، مما يجعله آمناً لجميع الأعمار.`,
+        h2_7:                    `7. أمان البيانات`,
+        p7:                      `نظراً لأن جميع بياناتك مخزّنة على جهازك، فإن أمانها يُحكَم بوسائل الحماية المدمجة في جهازك — قفل الشاشة، Face ID / Touch ID، وتشفير بيانات iOS.`,
+        h2_8:                    `8. حقوقك`,
+        p8:                      `بما أننا لا نخزّن أي بيانات عنك على أي خادم، فلا يوجد ما يمكننا الوصول إليه أو تصديره أو حذفه نيابةً عنك. لإزالة جميع البيانات المرتبطة بالتطبيق، استخدم خيار الحذف داخل التطبيق أو قم بإلغاء تثبيت Roulette de Movie من جهازك.`,
+        h2_9:                    `9. التغييرات على هذه السياسة`,
+        p9:                      `إذا تغيرت هذه السياسة بشكل جوهري، سنقوم بتحديث تاريخ "آخر تحديث" في أعلى هذا المستند وإخطار المستخدمين من خلال تحديث التطبيق عند الاقتضاء.`,
+        h2_10:                   `10. اتصل بنا`,
+        p10:                     `إذا كان لديك أسئلة حول سياسة الخصوصية هذه، يرجى التواصل:<br/><a href="mailto:vahidgr@yahoo.com">vahidgr@yahoo.com</a>`,
+        footerCopyright:         `© 2026 Vahid Ghanbarpour. جميع الحقوق محفوظة.`
+      },
+      'zh-Hans': {
+        title:                   `Roulette de Movie – 隐私政策`,
+        navBack:                 `← 返回支持页面`,
+        pageTitle:               `隐私政策`,
+        updated:                 `最后更新：2026年5月30日`,
+        intro:                   `本隐私政策说明 Roulette de Movie 如何处理您的信息。我们认为隐私是一项权利，因此本政策刻意保持简洁：我们不收集、共享或出售您的个人数据。`,
+        h2_1:                    `1. 概述`,
+        p1:                      `Roulette de Movie 是一款电影选择应用，可让您建立个人观影列表并转动轮盘选择下一部要看的影片。您在应用中创建的所有数据均保留在您的设备上。我们不运营任何服务器，不创建任何用户账户，也不远程存储任何有关您的信息。`,
+        h2_2:                    `2. 我们不收集的信息`,
+        p2:                      `我们不收集：`,
+        li2_1:                   `您的姓名、电子邮件地址或任何账户凭据`,
+        li2_2:                   `位置或 GPS 数据`,
+        li2_3:                   `设备标识符（IDFA、IDFV、设备名称）`,
+        li2_4:                   `联系人、日历或健康数据`,
+        li2_5:                   `摄像头或麦克风输入`,
+        li2_6:                   `剪贴板内容`,
+        li2_7:                   `发送给我们的崩溃报告或诊断数据`,
+        li2_8:                   `使用分析或行为数据`,
+        p2b:                     `该应用<strong>不请求任何设备权限</strong>——它不会请求访问您的摄像头、照片、位置、联系人、麦克风、蓝牙或任何其他敏感功能。`,
+        h2_3:                    `3. 存储在您设备上的信息`,
+        p3:                      `以下数据在您使用应用时创建，并<strong>仅存储在您的设备上</strong>，从不传输给我们：`,
+        thData:                  `数据`,
+        thWhat:                  `内容`,
+        thWhere:                 `存储位置`,
+        tdMovieCollection:       `电影收藏`,
+        tdMovieCollectionDesc:   `片名、上映年份及已观看/未观看状态`,
+        tdMovieCollectionStorage:`设备本地（CoreData）`,
+        tdPosterImages:          `电影海报图片`,
+        tdPosterImagesDesc:      `收藏中电影的缓存海报`,
+        tdPosterImagesStorage:   `设备本地（CoreData）`,
+        tdDateAdded:             `添加日期`,
+        tdDateAddedDesc:         `您添加每部电影的日期`,
+        tdDateAddedStorage:      `设备本地（CoreData）`,
+        tdOnboarding:            `引导状态`,
+        tdOnboardingDesc:        `您是否完成了引导页面`,
+        tdOnboardingStorage:     `设备本地（UserDefaults）`,
+        h2_4:                    `4. 网络请求——电影搜索`,
+        p4:                      `当您搜索电影时，您输入的文本将作为搜索查询发送至第三方电影元数据服务以返回匹配结果。这是该应用发出的唯一出站网络请求。`,
+        li4_1:                   `<strong>发送内容：</strong>您的搜索查询文本`,
+        li4_2:                   `<strong>接收内容：</strong>电影片名、上映年份和海报图片 URL`,
+        li4_3:                   `<strong>目的：</strong>查找并显示匹配的电影，以便您将其添加到收藏`,
+        p4b:                     `这些请求中不包含任何个人信息——仅包含您在搜索栏中输入的文本。`,
+        h2_5:                    `5. 第三方服务`,
+        p5:                      `Roulette de Movie 不使用任何第三方分析、广告或崩溃报告 SDK。该应用完全基于 Apple 的原生框架构建。唯一的第三方交互是第 4 节中描述的电影搜索 API。`,
+        h2_6:                    `6. 儿童隐私`,
+        p6:                      `Roulette de Movie 不会故意收集 13 岁以下儿童的任何信息。该应用不从任何人处收集个人数据，因此适合所有年龄段使用。`,
+        h2_7:                    `7. 数据安全`,
+        p7:                      `由于您的所有数据均存储在您的设备上，其安全性由设备的内置保护措施管理——屏幕锁定、Face ID / Touch ID 以及 iOS 数据加密。`,
+        h2_8:                    `8. 您的权利`,
+        p8:                      `由于我们不在任何服务器上存储您的数据，因此没有任何内容需要我们代您访问、导出或删除。如需删除与应用相关的所有数据，请使用应用内的删除选项或从您的设备上卸载 Roulette de Movie。`,
+        h2_9:                    `9. 本政策的变更`,
+        p9:                      `如果本政策发生重大变更，我们将更新本文件顶部的"最后更新"日期，并在适当时通过应用更新通知用户。`,
+        h2_10:                   `10. 联系方式`,
+        p10:                     `如果您对本隐私政策有任何疑问，请联系：<br/><a href="mailto:vahidgr@yahoo.com">vahidgr@yahoo.com</a>`,
+        footerCopyright:         `© 2026 Vahid Ghanbarpour。保留所有权利。`
+      },
+      nl: {
+        title:                   `Roulette de Movie – Privacybeleid`,
+        navBack:                 `← Terug naar ondersteuning`,
+        pageTitle:               `Privacybeleid`,
+        updated:                 `Laatste update: 30 mei 2026`,
+        intro:                   `Dit privacybeleid beschrijft hoe Roulette de Movie omgaat met jouw informatie. Wij geloven dat privacy een recht is, dus dit beleid is bewust eenvoudig gehouden: we verzamelen, delen of verkopen geen persoonlijke gegevens.`,
+        h2_1:                    `1. Overzicht`,
+        p1:                      `Roulette de Movie is een film-kiesapp waarmee je een persoonlijke kijklijst kunt aanleggen en een wiel kunt draaien om te kiezen wat je als volgende kijkt. Alle gegevens die je in de app aanmaakt, blijven op je apparaat. We beheren geen servers, maken geen gebruikersaccounts aan en slaan geen informatie over jou op op afstand.`,
+        h2_2:                    `2. Informatie die we niet verzamelen`,
+        p2:                      `We verzamelen niet:`,
+        li2_1:                   `Je naam, e-mailadres of accountgegevens`,
+        li2_2:                   `Locatie- of gpsgegevens`,
+        li2_3:                   `Apparaat-ID's (IDFA, IDFV, apparaatnaam)`,
+        li2_4:                   `Contacten, agenda- of gezondheidsgegevens`,
+        li2_5:                   `Camera- of microfooninvoer`,
+        li2_6:                   `Klembordinhoud`,
+        li2_7:                   `Crashrapporten of diagnostische gegevens die naar ons worden gestuurd`,
+        li2_8:                   `Gebruiksanalytics of gedragsgegevens`,
+        p2b:                     `De app vraagt <strong>geen apparaatmachtigingen</strong> — ze vraagt geen toegang tot je camera, foto's, locatie, contacten, microfoon, Bluetooth of andere gevoelige functies.`,
+        h2_3:                    `3. Informatie opgeslagen op je apparaat`,
+        p3:                      `De volgende gegevens worden aangemaakt wanneer je de app gebruikt en worden <strong>alleen op je apparaat</strong> opgeslagen, nooit naar ons verzonden:`,
+        thData:                  `Gegevens`,
+        thWhat:                  `Wat het is`,
+        thWhere:                 `Waar opgeslagen`,
+        tdMovieCollection:       `Filmcollectie`,
+        tdMovieCollectionDesc:   `Titels, uitjaartal en bekeken/onbekeken status`,
+        tdMovieCollectionStorage:`Op apparaat (CoreData)`,
+        tdPosterImages:          `Filmposterafbeeldingen`,
+        tdPosterImagesDesc:      `Gecachede artwork voor films in je collectie`,
+        tdPosterImagesStorage:   `Op apparaat (CoreData)`,
+        tdDateAdded:             `Datum toegevoegd`,
+        tdDateAddedDesc:         `De datum waarop je elke film hebt toegevoegd`,
+        tdDateAddedStorage:      `Op apparaat (CoreData)`,
+        tdOnboarding:            `Onboardingstatus`,
+        tdOnboardingDesc:        `Of je het introductiescherm hebt voltooid`,
+        tdOnboardingStorage:     `Op apparaat (UserDefaults)`,
+        h2_4:                    `4. Netwerkverzoeken — Filmzoekopdracht`,
+        p4:                      `Wanneer je naar een film zoekt, wordt de ingevoerde tekst als zoekopdracht naar een externe filmmetadataservice gestuurd om overeenkomende resultaten te retourneren. Dit is het enige uitgaande netwerkverzoek dat de app maakt.`,
+        li4_1:                   `<strong>Wat wordt verzonden:</strong> De tekst van je zoekopdracht`,
+        li4_2:                   `<strong>Wat wordt ontvangen:</strong> Filmtitels, uitjaartalen en poster-URL's`,
+        li4_3:                   `<strong>Doel:</strong> Overeenkomende films zoeken en weergeven zodat je ze aan je collectie kunt toevoegen`,
+        p4b:                     `In deze verzoeken is geen persoonlijke informatie opgenomen — alleen de tekst die je in het zoekveld typt.`,
+        h2_5:                    `5. Diensten van derden`,
+        p5:                      `Roulette de Movie gebruikt geen analytics-, reclame- of crashrapportage-SDK's van derden. De app is volledig gebouwd op Apple's native frameworks. De enige interactie met derden is de filmzoek-API die in sectie 4 wordt beschreven.`,
+        h2_6:                    `6. Privacy van kinderen`,
+        p6:                      `Roulette de Movie verzamelt niet bewust informatie van kinderen onder de 13 jaar. De app verzamelt geen persoonlijke gegevens van wie dan ook, waardoor het veilig is voor alle leeftijden.`,
+        h2_7:                    `7. Gegevensbeveiliging`,
+        p7:                      `Omdat al je gegevens op je apparaat worden opgeslagen, wordt de beveiliging ervan bepaald door de ingebouwde beveiligingen van je apparaat — schermvergrendeling, Face ID / Touch ID en iOS-gegevensversleuteling.`,
+        h2_8:                    `8. Jouw rechten`,
+        p8:                      `Omdat we geen gegevens over jou op een server opslaan, is er niets dat we namens jou kunnen inzien, exporteren of verwijderen. Om alle gegevens van de app te verwijderen, gebruik je de verwijderoptie in de app of verwijder je Roulette de Movie van je apparaat.`,
+        h2_9:                    `9. Wijzigingen in dit beleid`,
+        p9:                      `Als dit beleid wezenlijk verandert, werken we de datum "Laatste update" bovenaan dit document bij en informeren we gebruikers via een app-update wanneer dat passend is.`,
+        h2_10:                   `10. Contact`,
+        p10:                     `Als je vragen hebt over dit privacybeleid, neem dan contact op:<br/><a href="mailto:vahidgr@yahoo.com">vahidgr@yahoo.com</a>`,
+        footerCopyright:         `© 2026 Vahid Ghanbarpour. Alle rechten voorbehouden.`
+      },
+      fr: {
+        title:                   `Roulette de Movie – Politique de confidentialité`,
+        navBack:                 `← Retour à l'assistance`,
+        pageTitle:               `Politique de confidentialité`,
+        updated:                 `Dernière mise à jour : 30 mai 2026`,
+        intro:                   `Cette politique de confidentialité décrit la manière dont Roulette de Movie traite vos informations. Nous estimons que la vie privée est un droit, c'est pourquoi cette politique est volontairement simple : nous ne collectons, ne partageons ni ne vendons vos données personnelles.`,
+        h2_1:                    `1. Aperçu`,
+        p1:                      `Roulette de Movie est une application de sélection de films qui vous permet de créer une liste de films à regarder et de faire tourner une roue pour choisir votre prochain film. Toutes les données que vous créez dans l'application restent sur votre appareil. Nous n'exploitons aucun serveur, ne créons aucun compte utilisateur et ne stockons aucune information vous concernant à distance.`,
+        h2_2:                    `2. Informations que nous ne collectons pas`,
+        p2:                      `Nous ne collectons pas :`,
+        li2_1:                   `Votre nom, adresse e-mail ou identifiants de compte`,
+        li2_2:                   `Données de localisation ou GPS`,
+        li2_3:                   `Identifiants d'appareil (IDFA, IDFV, nom de l'appareil)`,
+        li2_4:                   `Contacts, calendrier ou données de santé`,
+        li2_5:                   `Entrée caméra ou microphone`,
+        li2_6:                   `Contenu du presse-papiers`,
+        li2_7:                   `Rapports de plantage ou données de diagnostic envoyés`,
+        li2_8:                   `Données d'analyse d'utilisation ou comportementales`,
+        p2b:                     `L'application ne demande <strong>aucune autorisation d'appareil</strong> — elle ne demande pas l'accès à votre caméra, photos, localisation, contacts, microphone, Bluetooth ou toute autre fonctionnalité sensible.`,
+        h2_3:                    `3. Informations stockées sur votre appareil`,
+        p3:                      `Les données suivantes sont créées lorsque vous utilisez l'application et sont stockées <strong>uniquement sur votre appareil</strong>, jamais transmises :`,
+        thData:                  `Données`,
+        thWhat:                  `Description`,
+        thWhere:                 `Lieu de stockage`,
+        tdMovieCollection:       `Collection de films`,
+        tdMovieCollectionDesc:   `Titres, années de sortie et statut vu/non vu`,
+        tdMovieCollectionStorage:`Sur l'appareil (CoreData)`,
+        tdPosterImages:          `Images d'affiches`,
+        tdPosterImagesDesc:      `Illustrations mises en cache pour les films de votre collection`,
+        tdPosterImagesStorage:   `Sur l'appareil (CoreData)`,
+        tdDateAdded:             `Date d'ajout`,
+        tdDateAddedDesc:         `La date à laquelle vous avez ajouté chaque film`,
+        tdDateAddedStorage:      `Sur l'appareil (CoreData)`,
+        tdOnboarding:            `État d'intégration`,
+        tdOnboardingDesc:        `Si vous avez terminé l'écran d'introduction`,
+        tdOnboardingStorage:     `Sur l'appareil (UserDefaults)`,
+        h2_4:                    `4. Requêtes réseau — Recherche de films`,
+        p4:                      `Lorsque vous recherchez un film, le texte saisi est envoyé comme requête de recherche à un service de métadonnées de films tiers pour retourner les résultats correspondants. C'est la seule requête réseau sortante effectuée par l'application.`,
+        li4_1:                   `<strong>Ce qui est envoyé :</strong> Le texte de votre requête de recherche`,
+        li4_2:                   `<strong>Ce qui est reçu :</strong> Titres de films, années de sortie et URL des affiches`,
+        li4_3:                   `<strong>Objectif :</strong> Trouver et afficher les films correspondants pour que vous puissiez les ajouter à votre collection`,
+        p4b:                     `Aucune information personnelle n'est incluse dans ces requêtes — uniquement le texte que vous saisissez dans le champ de recherche.`,
+        h2_5:                    `5. Services tiers`,
+        p5:                      `Roulette de Movie n'utilise aucun SDK tiers d'analyse, de publicité ou de rapport de plantage. L'application est entièrement construite sur les frameworks natifs d'Apple. La seule interaction tierce est l'API de recherche de films décrite à la section 4.`,
+        h2_6:                    `6. Confidentialité des enfants`,
+        p6:                      `Roulette de Movie ne collecte pas sciemment d'informations auprès d'enfants de moins de 13 ans. L'application ne collecte aucune donnée personnelle de qui que ce soit, ce qui la rend adaptée à tous les âges.`,
+        h2_7:                    `7. Sécurité des données`,
+        p7:                      `Puisque toutes vos données sont stockées sur votre appareil, leur sécurité est régie par les protections intégrées de votre appareil — verrouillage d'écran, Face ID / Touch ID et chiffrement des données iOS.`,
+        h2_8:                    `8. Vos droits`,
+        p8:                      `Comme nous ne stockons aucune donnée vous concernant sur un serveur, il n'y a rien à consulter, exporter ou supprimer en votre nom. Pour supprimer toutes les données associées à l'application, utilisez l'option de suppression dans l'application ou désinstallez Roulette de Movie de votre appareil.`,
+        h2_9:                    `9. Modifications de cette politique`,
+        p9:                      `Si cette politique change de manière significative, nous mettrons à jour la date de « dernière mise à jour » en haut de ce document et informerons les utilisateurs via une mise à jour de l'application, le cas échéant.`,
+        h2_10:                   `10. Contact`,
+        p10:                     `Si vous avez des questions sur cette politique de confidentialité, veuillez contacter :<br/><a href="mailto:vahidgr@yahoo.com">vahidgr@yahoo.com</a>`,
+        footerCopyright:         `© 2026 Vahid Ghanbarpour. Tous droits réservés.`
+      },
+      de: {
+        title:                   `Roulette de Movie – Datenschutzerklärung`,
+        navBack:                 `← Zurück zum Support`,
+        pageTitle:               `Datenschutzerklärung`,
+        updated:                 `Zuletzt aktualisiert: 30. Mai 2026`,
+        intro:                   `Diese Datenschutzerklärung beschreibt, wie Roulette de Movie mit deinen Informationen umgeht. Wir sind der Überzeugung, dass Privatsphäre ein Recht ist, daher ist diese Erklärung bewusst einfach gehalten: Wir erheben, teilen oder verkaufen keine personenbezogenen Daten.`,
+        h2_1:                    `1. Überblick`,
+        p1:                      `Roulette de Movie ist eine Film-Auswahl-App, mit der du eine persönliche Watchlist erstellen und ein Rad drehen kannst, um deinen nächsten Film zu wählen. Alle Daten, die du in der App erstellst, verbleiben auf deinem Gerät. Wir betreiben keine Server, erstellen keine Benutzerkonten und speichern keine Informationen über dich aus der Ferne.`,
+        h2_2:                    `2. Informationen, die wir nicht erheben`,
+        p2:                      `Wir erheben nicht:`,
+        li2_1:                   `Deinen Namen, deine E-Mail-Adresse oder Kontoanmeldedaten`,
+        li2_2:                   `Standort- oder GPS-Daten`,
+        li2_3:                   `Gerätekennungen (IDFA, IDFV, Gerätename)`,
+        li2_4:                   `Kontakte, Kalender- oder Gesundheitsdaten`,
+        li2_5:                   `Kamera- oder Mikrofoneingaben`,
+        li2_6:                   `Zwischenablage-Inhalte`,
+        li2_7:                   `Absturzberichte oder uns übermittelte Diagnosedaten`,
+        li2_8:                   `Nutzungsanalysen oder Verhaltensdaten`,
+        p2b:                     `Die App fordert <strong>keine Geräteberechtigungen</strong> an — sie fragt nicht nach Zugriff auf Kamera, Fotos, Standort, Kontakte, Mikrofon, Bluetooth oder andere sensible Funktionen.`,
+        h2_3:                    `3. Auf deinem Gerät gespeicherte Informationen`,
+        p3:                      `Die folgenden Daten werden bei der App-Nutzung erstellt und <strong>ausschließlich auf deinem Gerät</strong> gespeichert, niemals an uns übertragen:`,
+        thData:                  `Daten`,
+        thWhat:                  `Was es ist`,
+        thWhere:                 `Speicherort`,
+        tdMovieCollection:       `Filmsammlung`,
+        tdMovieCollectionDesc:   `Titel, Erscheinungsjahre und Gesehen/Ungesehen-Status`,
+        tdMovieCollectionStorage:`Auf dem Gerät (CoreData)`,
+        tdPosterImages:          `Filmplakat-Bilder`,
+        tdPosterImagesDesc:      `Zwischengespeichertes Artwork für Filme in deiner Sammlung`,
+        tdPosterImagesStorage:   `Auf dem Gerät (CoreData)`,
+        tdDateAdded:             `Hinzugefügt am`,
+        tdDateAddedDesc:         `Das Datum, an dem du jeden Film hinzugefügt hast`,
+        tdDateAddedStorage:      `Auf dem Gerät (CoreData)`,
+        tdOnboarding:            `Onboarding-Status`,
+        tdOnboardingDesc:        `Ob du den Einführungsbildschirm abgeschlossen hast`,
+        tdOnboardingStorage:     `Auf dem Gerät (UserDefaults)`,
+        h2_4:                    `4. Netzwerkanfragen — Filmsuche`,
+        p4:                      `Wenn du nach einem Film suchst, wird der eingegebene Text als Suchanfrage an einen Film-Metadatendienst eines Drittanbieters gesendet, um passende Ergebnisse zurückzugeben. Dies ist die einzige ausgehende Netzwerkanfrage, die die App stellt.`,
+        li4_1:                   `<strong>Was gesendet wird:</strong> Dein Suchanfrage-Text`,
+        li4_2:                   `<strong>Was empfangen wird:</strong> Filmtitel, Erscheinungsjahre und Poster-URLs`,
+        li4_3:                   `<strong>Zweck:</strong> Passende Filme zu finden und anzuzeigen, damit du sie deiner Sammlung hinzufügen kannst`,
+        p4b:                     `Diese Anfragen enthalten keine personenbezogenen Daten — nur den Text, den du in das Suchfeld eingibst.`,
+        h2_5:                    `5. Dienste Dritter`,
+        p5:                      `Roulette de Movie verwendet keine Analyse-, Werbe- oder Absturzbericht-SDKs von Drittanbietern. Die App basiert vollständig auf Apples nativen Frameworks. Die einzige Interaktion mit Dritten ist die in Abschnitt 4 beschriebene Filmsuche-API.`,
+        h2_6:                    `6. Datenschutz für Kinder`,
+        p6:                      `Roulette de Movie erhebt wissentlich keine Informationen von Kindern unter 13 Jahren. Die App erhebt von niemandem personenbezogene Daten und ist daher für alle Altersgruppen geeignet.`,
+        h2_7:                    `7. Datensicherheit`,
+        p7:                      `Da alle deine Daten auf deinem Gerät gespeichert sind, wird ihre Sicherheit durch die integrierten Schutzmaßnahmen deines Geräts gewährleistet — Bildschirmsperre, Face ID / Touch ID und iOS-Datenverschlüsselung.`,
+        h2_8:                    `8. Deine Rechte`,
+        p8:                      `Da wir keine Daten über dich auf einem Server speichern, gibt es nichts, das wir in deinem Auftrag einsehen, exportieren oder löschen könnten. Um alle mit der App verbundenen Daten zu entfernen, verwende die Löschoption in der App oder deinstalliere Roulette de Movie von deinem Gerät.`,
+        h2_9:                    `9. Änderungen dieser Richtlinie`,
+        p9:                      `Wenn sich diese Richtlinie wesentlich ändert, werden wir das Datum „Zuletzt aktualisiert" oben in diesem Dokument aktualisieren und Benutzer gegebenenfalls durch ein App-Update benachrichtigen.`,
+        h2_10:                   `10. Kontakt`,
+        p10:                     `Bei Fragen zu dieser Datenschutzerklärung wende dich bitte an:<br/><a href="mailto:vahidgr@yahoo.com">vahidgr@yahoo.com</a>`,
+        footerCopyright:         `© 2026 Vahid Ghanbarpour. Alle Rechte vorbehalten.`
+      },
+      it: {
+        title:                   `Roulette de Movie – Informativa sulla privacy`,
+        navBack:                 `← Torna al supporto`,
+        pageTitle:               `Informativa sulla privacy`,
+        updated:                 `Ultimo aggiornamento: 30 maggio 2026`,
+        intro:                   `Questa informativa sulla privacy descrive come Roulette de Movie gestisce le tue informazioni. Crediamo che la privacy sia un diritto, quindi questa informativa è volutamente semplice: non raccogliamo, condividiamo né vendiamo i tuoi dati personali.`,
+        h2_1:                    `1. Panoramica`,
+        p1:                      `Roulette de Movie è un'app per la scelta dei film che ti permette di creare una lista personale e girare una ruota per scegliere cosa guardare dopo. Tutti i dati che crei nell'app rimangono sul tuo dispositivo. Non gestiamo server, non creiamo account utente e non archiviamo informazioni su di te da remoto.`,
+        h2_2:                    `2. Informazioni che non raccogliamo`,
+        p2:                      `Non raccogliamo:`,
+        li2_1:                   `Il tuo nome, indirizzo e-mail o credenziali dell'account`,
+        li2_2:                   `Dati di posizione o GPS`,
+        li2_3:                   `Identificatori del dispositivo (IDFA, IDFV, nome del dispositivo)`,
+        li2_4:                   `Contatti, calendario o dati sulla salute`,
+        li2_5:                   `Input da fotocamera o microfono`,
+        li2_6:                   `Contenuto degli appunti`,
+        li2_7:                   `Rapporti di arresto anomalo o dati diagnostici inviati a noi`,
+        li2_8:                   `Dati di analisi dell'utilizzo o comportamentali`,
+        p2b:                     `L'app non richiede <strong>nessun permesso del dispositivo</strong> — non chiede accesso alla fotocamera, alle foto, alla posizione, ai contatti, al microfono, al Bluetooth o a qualsiasi altra funzionalità sensibile.`,
+        h2_3:                    `3. Informazioni archiviate sul tuo dispositivo`,
+        p3:                      `I seguenti dati vengono creati quando usi l'app e sono archiviati <strong>solo sul tuo dispositivo</strong>, mai trasmessi a noi:`,
+        thData:                  `Dati`,
+        thWhat:                  `Descrizione`,
+        thWhere:                 `Dove archiviati`,
+        tdMovieCollection:       `Collezione di film`,
+        tdMovieCollectionDesc:   `Titoli, anni di uscita e stato visto/non visto`,
+        tdMovieCollectionStorage:`Sul dispositivo (CoreData)`,
+        tdPosterImages:          `Immagini delle locandine`,
+        tdPosterImagesDesc:      `Artwork in cache per i film nella tua collezione`,
+        tdPosterImagesStorage:   `Sul dispositivo (CoreData)`,
+        tdDateAdded:             `Data di aggiunta`,
+        tdDateAddedDesc:         `La data in cui hai aggiunto ogni film`,
+        tdDateAddedStorage:      `Sul dispositivo (CoreData)`,
+        tdOnboarding:            `Stato di onboarding`,
+        tdOnboardingDesc:        `Se hai completato la schermata introduttiva`,
+        tdOnboardingStorage:     `Sul dispositivo (UserDefaults)`,
+        h2_4:                    `4. Richieste di rete — Ricerca film`,
+        p4:                      `Quando cerchi un film, il testo che digiti viene inviato come query di ricerca a un servizio di metadati cinematografici di terze parti per restituire i risultati corrispondenti. Questa è l'unica richiesta di rete in uscita effettuata dall'app.`,
+        li4_1:                   `<strong>Cosa viene inviato:</strong> Il testo della tua query di ricerca`,
+        li4_2:                   `<strong>Cosa viene ricevuto:</strong> Titoli di film, anni di uscita e URL delle locandine`,
+        li4_3:                   `<strong>Scopo:</strong> Trovare e mostrare i film corrispondenti per aggiungerli alla tua collezione`,
+        p4b:                     `Nessuna informazione personale è inclusa in queste richieste — solo il testo che digiti nel campo di ricerca.`,
+        h2_5:                    `5. Servizi di terze parti`,
+        p5:                      `Roulette de Movie non utilizza SDK di terze parti per analisi, pubblicità o segnalazione di arresti anomali. L'app è interamente costruita sui framework nativi di Apple. L'unica interazione con terze parti è l'API di ricerca film descritta nella sezione 4.`,
+        h2_6:                    `6. Privacy dei minori`,
+        p6:                      `Roulette de Movie non raccoglie consapevolmente informazioni da bambini di età inferiore ai 13 anni. L'app non raccoglie dati personali da nessuno, rendendola sicura per tutte le età.`,
+        h2_7:                    `7. Sicurezza dei dati`,
+        p7:                      `Poiché tutti i tuoi dati sono archiviati sul tuo dispositivo, la loro sicurezza è governata dalle protezioni integrate del dispositivo — blocco schermo, Face ID / Touch ID e crittografia dei dati iOS.`,
+        h2_8:                    `8. I tuoi diritti`,
+        p8:                      `Poiché non archiviamo dati su di te su alcun server, non c'è nulla da consultare, esportare o eliminare per tuo conto. Per rimuovere tutti i dati associati all'app, usa l'opzione di eliminazione nell'app o disinstalla Roulette de Movie dal tuo dispositivo.`,
+        h2_9:                    `9. Modifiche a questa informativa`,
+        p9:                      `Se questa informativa cambia in modo sostanziale, aggiorneremo la data di "Ultimo aggiornamento" in cima a questo documento e avviseremo gli utenti tramite un aggiornamento dell'app dove appropriato.`,
+        h2_10:                   `10. Contatti`,
+        p10:                     `Per domande su questa informativa sulla privacy, contatta:<br/><a href="mailto:vahidgr@yahoo.com">vahidgr@yahoo.com</a>`,
+        footerCopyright:         `© 2026 Vahid Ghanbarpour. Tutti i diritti riservati.`
+      },
+      ko: {
+        title:                   `Roulette de Movie – 개인정보 처리방침`,
+        navBack:                 `← 지원 페이지로 돌아가기`,
+        pageTitle:               `개인정보 처리방침`,
+        updated:                 `최종 업데이트: 2026년 5월 30일`,
+        intro:                   `이 개인정보 처리방침은 Roulette de Movie가 귀하의 정보를 처리하는 방법을 설명합니다. 저희는 개인정보 보호가 권리라고 믿기 때문에 이 방침은 의도적으로 단순하게 작성되었습니다: 저희는 귀하의 개인 데이터를 수집, 공유 또는 판매하지 않습니다.`,
+        h2_1:                    `1. 개요`,
+        p1:                      `Roulette de Movie는 개인 시청 목록을 만들고 룰렛을 돌려 다음에 볼 영화를 선택할 수 있는 영화 선택 앱입니다. 앱에서 생성한 모든 데이터는 기기에 저장됩니다. 저희는 서버를 운영하지 않으며 사용자 계정을 생성하거나 귀하에 관한 정보를 원격으로 저장하지 않습니다.`,
+        h2_2:                    `2. 수집하지 않는 정보`,
+        p2:                      `저희는 다음을 수집하지 않습니다:`,
+        li2_1:                   `귀하의 이름, 이메일 주소 또는 계정 자격 증명`,
+        li2_2:                   `위치 또는 GPS 데이터`,
+        li2_3:                   `기기 식별자(IDFA, IDFV, 기기 이름)`,
+        li2_4:                   `연락처, 캘린더 또는 건강 데이터`,
+        li2_5:                   `카메라 또는 마이크 입력`,
+        li2_6:                   `클립보드 내용`,
+        li2_7:                   `저희에게 전송되는 충돌 보고서 또는 진단 데이터`,
+        li2_8:                   `사용 분석 또는 행동 데이터`,
+        p2b:                     `이 앱은 <strong>어떠한 기기 권한도 요청하지 않습니다</strong> — 카메라, 사진, 위치, 연락처, 마이크, Bluetooth 또는 기타 민감한 기능에 대한 접근을 요청하지 않습니다.`,
+        h2_3:                    `3. 기기에 저장되는 정보`,
+        p3:                      `다음 데이터는 앱 사용 시 생성되며 <strong>기기에만 저장</strong>되고 저희에게 전송되지 않습니다:`,
+        thData:                  `데이터`,
+        thWhat:                  `내용`,
+        thWhere:                 `저장 위치`,
+        tdMovieCollection:       `영화 컬렉션`,
+        tdMovieCollectionDesc:   `제목, 출시 연도, 시청/미시청 상태`,
+        tdMovieCollectionStorage:`기기 내 (CoreData)`,
+        tdPosterImages:          `영화 포스터 이미지`,
+        tdPosterImagesDesc:      `컬렉션 영화의 캐시된 아트워크`,
+        tdPosterImagesStorage:   `기기 내 (CoreData)`,
+        tdDateAdded:             `추가 날짜`,
+        tdDateAddedDesc:         `각 영화를 추가한 날짜`,
+        tdDateAddedStorage:      `기기 내 (CoreData)`,
+        tdOnboarding:            `온보딩 상태`,
+        tdOnboardingDesc:        `인트로 화면 완료 여부`,
+        tdOnboardingStorage:     `기기 내 (UserDefaults)`,
+        h2_4:                    `4. 네트워크 요청 — 영화 검색`,
+        p4:                      `영화를 검색할 때 입력한 텍스트가 검색 쿼리로 제3자 영화 메타데이터 서비스에 전송되어 일치하는 결과를 반환합니다. 이것이 앱이 수행하는 유일한 아웃바운드 네트워크 요청입니다.`,
+        li4_1:                   `<strong>전송되는 내용:</strong> 검색 쿼리 텍스트`,
+        li4_2:                   `<strong>수신되는 내용:</strong> 영화 제목, 출시 연도 및 포스터 이미지 URL`,
+        li4_3:                   `<strong>목적:</strong> 일치하는 영화를 찾아 표시하여 컬렉션에 추가할 수 있도록 함`,
+        p4b:                     `이러한 요청에는 개인 정보가 포함되지 않습니다 — 검색 필드에 입력하는 텍스트만 포함됩니다.`,
+        h2_5:                    `5. 제3자 서비스`,
+        p5:                      `Roulette de Movie는 제3자 분석, 광고 또는 충돌 보고 SDK를 사용하지 않습니다. 앱은 전적으로 Apple의 네이티브 프레임워크로 구축되었습니다. 유일한 제3자 상호작용은 섹션 4에 설명된 영화 검색 API입니다.`,
+        h2_6:                    `6. 아동 개인정보 보호`,
+        p6:                      `Roulette de Movie는 13세 미만 아동의 정보를 의도적으로 수집하지 않습니다. 앱은 누구로부터도 개인 데이터를 수집하지 않아 모든 연령대에 안전합니다.`,
+        h2_7:                    `7. 데이터 보안`,
+        p7:                      `모든 데이터가 기기에 저장되므로 보안은 기기의 내장 보호 기능(화면 잠금, Face ID / Touch ID, iOS 데이터 암호화)에 의해 관리됩니다.`,
+        h2_8:                    `8. 귀하의 권리`,
+        p8:                      `저희는 서버에 귀하에 관한 데이터를 저장하지 않으므로 귀하를 대신하여 접근, 내보내기 또는 삭제할 것이 없습니다. 앱과 관련된 모든 데이터를 제거하려면 앱 내 삭제 옵션을 사용하거나 기기에서 Roulette de Movie를 제거하십시오.`,
+        h2_9:                    `9. 이 방침의 변경`,
+        p9:                      `이 방침이 중요하게 변경될 경우 이 문서 상단의 "최종 업데이트" 날짜를 업데이트하고 적절한 경우 앱 업데이트를 통해 사용자에게 알립니다.`,
+        h2_10:                   `10. 문의`,
+        p10:                     `이 개인정보 처리방침에 관한 질문이 있으시면 다음으로 연락하십시오:<br/><a href="mailto:vahidgr@yahoo.com">vahidgr@yahoo.com</a>`,
+        footerCopyright:         `© 2026 Vahid Ghanbarpour. 모든 권리 보유.`
+      },
+      'pt-PT': {
+        title:                   `Roulette de Movie – Política de Privacidade`,
+        navBack:                 `← Voltar ao suporte`,
+        pageTitle:               `Política de Privacidade`,
+        updated:                 `Última atualização: 30 de maio de 2026`,
+        intro:                   `Esta política de privacidade descreve como o Roulette de Movie trata as tuas informações. Acreditamos que a privacidade é um direito, por isso esta política é intencionalmente simples: não recolhemos, partilhamos nem vendemos os teus dados pessoais.`,
+        h2_1:                    `1. Visão Geral`,
+        p1:                      `O Roulette de Movie é uma aplicação de escolha de filmes que te permite criar uma lista pessoal e rodar uma roleta para escolher o que ver a seguir. Todos os dados que crias na aplicação ficam no teu dispositivo. Não operamos servidores, não criamos contas de utilizador nem armazenamos informações sobre ti remotamente.`,
+        h2_2:                    `2. Informações que Não Recolhemos`,
+        p2:                      `Não recolhemos:`,
+        li2_1:                   `O teu nome, endereço de e-mail ou quaisquer credenciais de conta`,
+        li2_2:                   `Dados de localização ou GPS`,
+        li2_3:                   `Identificadores do dispositivo (IDFA, IDFV, nome do dispositivo)`,
+        li2_4:                   `Contactos, calendário ou dados de saúde`,
+        li2_5:                   `Entrada de câmara ou microfone`,
+        li2_6:                   `Conteúdo da área de transferência`,
+        li2_7:                   `Relatórios de falhas ou dados de diagnóstico enviados para nós`,
+        li2_8:                   `Análises de utilização ou dados comportamentais`,
+        p2b:                     `A aplicação não solicita <strong>nenhuma permissão do dispositivo</strong> — não pede acesso à câmara, fotos, localização, contactos, microfone, Bluetooth ou qualquer outra funcionalidade sensível.`,
+        h2_3:                    `3. Informações Armazenadas no Teu Dispositivo`,
+        p3:                      `Os seguintes dados são criados quando usas a aplicação e são armazenados <strong>apenas no teu dispositivo</strong>, nunca transmitidos para nós:`,
+        thData:                  `Dados`,
+        thWhat:                  `O que são`,
+        thWhere:                 `Onde estão armazenados`,
+        tdMovieCollection:       `Coleção de filmes`,
+        tdMovieCollectionDesc:   `Títulos, anos de lançamento e estado visto/não visto`,
+        tdMovieCollectionStorage:`No dispositivo (CoreData)`,
+        tdPosterImages:          `Imagens de cartazes`,
+        tdPosterImagesDesc:      `Artwork em cache para os filmes da tua coleção`,
+        tdPosterImagesStorage:   `No dispositivo (CoreData)`,
+        tdDateAdded:             `Data de adição`,
+        tdDateAddedDesc:         `A data em que adicionaste cada filme`,
+        tdDateAddedStorage:      `No dispositivo (CoreData)`,
+        tdOnboarding:            `Estado de integração`,
+        tdOnboardingDesc:        `Se concluíste o ecrã de introdução`,
+        tdOnboardingStorage:     `No dispositivo (UserDefaults)`,
+        h2_4:                    `4. Pedidos de Rede — Pesquisa de Filmes`,
+        p4:                      `Quando pesquisas um filme, o texto que escreves é enviado como consulta de pesquisa a um serviço de metadados de filmes de terceiros para devolver resultados correspondentes. Este é o único pedido de rede de saída que a aplicação faz.`,
+        li4_1:                   `<strong>O que é enviado:</strong> O texto da tua consulta de pesquisa`,
+        li4_2:                   `<strong>O que é recebido:</strong> Títulos de filmes, anos de lançamento e URLs dos cartazes`,
+        li4_3:                   `<strong>Finalidade:</strong> Encontrar e apresentar filmes correspondentes para os poderes adicionar à tua coleção`,
+        p4b:                     `Nenhuma informação pessoal é incluída nestes pedidos — apenas o texto que escreves no campo de pesquisa.`,
+        h2_5:                    `5. Serviços de Terceiros`,
+        p5:                      `O Roulette de Movie não utiliza SDKs de terceiros para análises, publicidade ou relatórios de falhas. A aplicação é construída inteiramente nos frameworks nativos da Apple. A única interação com terceiros é a API de pesquisa de filmes descrita na Secção 4.`,
+        h2_6:                    `6. Privacidade das Crianças`,
+        p6:                      `O Roulette de Movie não recolhe conscientemente informações de crianças com menos de 13 anos. A aplicação não recolhe dados pessoais de ninguém, tornando-a segura para todas as idades.`,
+        h2_7:                    `7. Segurança dos Dados`,
+        p7:                      `Como todos os teus dados são armazenados no teu dispositivo, a sua segurança é regida pelas proteções integradas do dispositivo — bloqueio de ecrã, Face ID / Touch ID e encriptação de dados iOS.`,
+        h2_8:                    `8. Os Teus Direitos`,
+        p8:                      `Como não armazenamos dados sobre ti em nenhum servidor, não há nada para aceder, exportar ou eliminar em teu nome. Para remover todos os dados associados à aplicação, usa a opção de eliminação dentro da aplicação ou desinstala o Roulette de Movie do teu dispositivo.`,
+        h2_9:                    `9. Alterações a Esta Política`,
+        p9:                      `Se esta política mudar de forma significativa, atualizaremos a data de "Última atualização" no topo deste documento e notificaremos os utilizadores através de uma atualização da aplicação, quando apropriado.`,
+        h2_10:                   `10. Contacto`,
+        p10:                     `Se tiveres dúvidas sobre esta política de privacidade, contacta:<br/><a href="mailto:vahidgr@yahoo.com">vahidgr@yahoo.com</a>`,
+        footerCopyright:         `© 2026 Vahid Ghanbarpour. Todos os direitos reservados.`
+      },
+      es: {
+        title:                   `Roulette de Movie – Política de Privacidad`,
+        navBack:                 `← Volver al soporte`,
+        pageTitle:               `Política de Privacidad`,
+        updated:                 `Última actualización: 30 de mayo de 2026`,
+        intro:                   `Esta política de privacidad describe cómo Roulette de Movie gestiona tu información. Creemos que la privacidad es un derecho, por lo que esta política es intencionalmente sencilla: no recopilamos, compartimos ni vendemos tus datos personales.`,
+        h2_1:                    `1. Descripción General`,
+        p1:                      `Roulette de Movie es una aplicación de selección de películas que te permite crear una lista personal y girar una ruleta para elegir qué ver a continuación. Todos los datos que creas en la aplicación permanecen en tu dispositivo. No operamos servidores, no creamos cuentas de usuario ni almacenamos información sobre ti de forma remota.`,
+        h2_2:                    `2. Información que No Recopilamos`,
+        p2:                      `No recopilamos:`,
+        li2_1:                   `Tu nombre, dirección de correo electrónico ni credenciales de cuenta`,
+        li2_2:                   `Datos de ubicación o GPS`,
+        li2_3:                   `Identificadores del dispositivo (IDFA, IDFV, nombre del dispositivo)`,
+        li2_4:                   `Contactos, calendario o datos de salud`,
+        li2_5:                   `Entrada de cámara o micrófono`,
+        li2_6:                   `Contenido del portapapeles`,
+        li2_7:                   `Informes de fallos o datos de diagnóstico enviados a nosotros`,
+        li2_8:                   `Análisis de uso o datos de comportamiento`,
+        p2b:                     `La aplicación no solicita <strong>ningún permiso del dispositivo</strong> — no pide acceso a tu cámara, fotos, ubicación, contactos, micrófono, Bluetooth ni ninguna otra función sensible.`,
+        h2_3:                    `3. Información Almacenada en Tu Dispositivo`,
+        p3:                      `Los siguientes datos se crean cuando usas la aplicación y se almacenan <strong>únicamente en tu dispositivo</strong>, nunca transmitidos a nosotros:`,
+        thData:                  `Datos`,
+        thWhat:                  `Qué es`,
+        thWhere:                 `Dónde se almacena`,
+        tdMovieCollection:       `Colección de películas`,
+        tdMovieCollectionDesc:   `Títulos, años de estreno y estado visto/no visto`,
+        tdMovieCollectionStorage:`En el dispositivo (CoreData)`,
+        tdPosterImages:          `Imágenes de carteles`,
+        tdPosterImagesDesc:      `Artwork en caché para las películas de tu colección`,
+        tdPosterImagesStorage:   `En el dispositivo (CoreData)`,
+        tdDateAdded:             `Fecha de adición`,
+        tdDateAddedDesc:         `La fecha en que añadiste cada película`,
+        tdDateAddedStorage:      `En el dispositivo (CoreData)`,
+        tdOnboarding:            `Estado de incorporación`,
+        tdOnboardingDesc:        `Si completaste la pantalla de introducción`,
+        tdOnboardingStorage:     `En el dispositivo (UserDefaults)`,
+        h2_4:                    `4. Solicitudes de Red — Búsqueda de Películas`,
+        p4:                      `Cuando buscas una película, el texto que escribes se envía como consulta de búsqueda a un servicio de metadatos de películas de terceros para devolver resultados coincidentes. Esta es la única solicitud de red saliente que realiza la aplicación.`,
+        li4_1:                   `<strong>Qué se envía:</strong> El texto de tu consulta de búsqueda`,
+        li4_2:                   `<strong>Qué se recibe:</strong> Títulos de películas, años de estreno y URLs de carteles`,
+        li4_3:                   `<strong>Propósito:</strong> Encontrar y mostrar películas coincidentes para que puedas añadirlas a tu colección`,
+        p4b:                     `No se incluye ninguna información personal en estas solicitudes — solo el texto que escribes en el campo de búsqueda.`,
+        h2_5:                    `5. Servicios de Terceros`,
+        p5:                      `Roulette de Movie no utiliza SDKs de terceros para análisis, publicidad ni informes de fallos. La aplicación está construida íntegramente sobre los frameworks nativos de Apple. La única interacción con terceros es la API de búsqueda de películas descrita en la Sección 4.`,
+        h2_6:                    `6. Privacidad Infantil`,
+        p6:                      `Roulette de Movie no recopila conscientemente información de menores de 13 años. La aplicación no recopila datos personales de nadie, lo que la hace segura para todas las edades.`,
+        h2_7:                    `7. Seguridad de los Datos`,
+        p7:                      `Dado que todos tus datos se almacenan en tu dispositivo, su seguridad está regida por las protecciones integradas del dispositivo — bloqueo de pantalla, Face ID / Touch ID y cifrado de datos de iOS.`,
+        h2_8:                    `8. Tus Derechos`,
+        p8:                      `Como no almacenamos datos sobre ti en ningún servidor, no hay nada que acceder, exportar o eliminar en tu nombre. Para eliminar todos los datos asociados a la aplicación, usa la opción de eliminación dentro de la aplicación o desinstala Roulette de Movie de tu dispositivo.`,
+        h2_9:                    `9. Cambios en Esta Política`,
+        p9:                      `Si esta política cambia de forma significativa, actualizaremos la fecha de "Última actualización" en la parte superior de este documento y notificaremos a los usuarios mediante una actualización de la aplicación cuando corresponda.`,
+        h2_10:                   `10. Contacto`,
+        p10:                     `Si tienes preguntas sobre esta política de privacidad, ponte en contacto:<br/><a href="mailto:vahidgr@yahoo.com">vahidgr@yahoo.com</a>`,
+        footerCopyright:         `© 2026 Vahid Ghanbarpour. Todos los derechos reservados.`
+      }
+    };
+
+    document.addEventListener('DOMContentLoaded', function () {
+      var t = T[window.__lang] || T['en'];
+      document.title = t.title;
+      document.querySelectorAll('[data-i18n]').forEach(function (el) {
+        el.textContent = t[el.getAttribute('data-i18n')];
+      });
+      document.querySelectorAll('[data-i18n-html]').forEach(function (el) {
+        el.innerHTML = t[el.getAttribute('data-i18n-html')];
+      });
+      if (window.__lang !== 'en') {
+        document.querySelectorAll('a[href="index.html"]').forEach(function (a) {
+          a.href = 'index.html?lang=' + window.__lang;
+        });
+      }
+    });
+  </script>
 
 </body>
 </html>
