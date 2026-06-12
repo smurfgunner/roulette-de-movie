@@ -160,6 +160,7 @@
 
   <!-- locale: language list (dropdown source of truth) -->
   <script src="locale/languages.js"></script>
+  <script src="locale/app-name.js"></script>
 
   <!-- locale: index page sections -->
   <script src="locale/index/meta.js"></script>
@@ -217,6 +218,7 @@
 
     document.addEventListener('DOMContentLoaded', function () {
       var lang = window.__lang;
+      var appName = APP_NAME[lang] || APP_NAME['en'];
 
       // Build dropdown from languages.js
       var sel = document.getElementById('langSelect');
@@ -233,8 +235,9 @@
         window.location.href = window.location.pathname + '?' + params.toString();
       });
 
-      // Set document title from meta section
-      document.title = (L_index_meta[lang] || L_index_meta['en']).title;
+      // Set app name heading and document title
+      document.querySelector('h1').textContent = appName;
+      document.title = (L_index_meta[lang] || L_index_meta['en']).title.replace(/\{APP_NAME\}/g, appName);
 
       // Apply all section strings via "section.key" data-i18n attributes
       document.querySelectorAll('[data-i18n]').forEach(function (el) {
@@ -243,7 +246,14 @@
         var sectionData = SECTIONS[section];
         if (!sectionData) return;
         var t = sectionData[lang] || sectionData['en'];
-        if (t && t[key] !== undefined) el.textContent = t[key];
+        if (t && t[key] !== undefined) el.textContent = t[key].replace(/\{APP_NAME\}/g, appName);
+      });
+
+      // Update mailto links with localized app name
+      var mailSubject = encodeURIComponent(appName + ' Support');
+      var mailBody = 'App%20Version%3A%20%0AiOS%20Version%3A%20%0ADevice%3A%20%0A%0ADescribe%20your%20issue%3A%20';
+      document.querySelectorAll('a[href*="subject="]').forEach(function (a) {
+        a.href = 'mailto:vahidgr@yahoo.com?subject=' + mailSubject + '&body=' + mailBody;
       });
 
       // Append lang param to privacy links when not English

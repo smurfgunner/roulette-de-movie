@@ -1,12 +1,12 @@
 var L_index_meta = {
-  en:      { title: 'Roulette de Movie – Support' },
-  ar:      { title: 'Roulette de Movie – الدعم' },
-  'zh-Hans': { title: 'Roulette de Movie – 支持' },
-  nl:      { title: 'Roulette de Movie – Ondersteuning' },
-  fr:      { title: 'Roulette de Movie – Assistance' },
-  de:      { title: 'Roulette de Movie – Support' },
-  it:      { title: 'Roulette de Movie – Supporto' },
-  ko:      { title: 'Roulette de Movie – 지원' },
-  'pt-PT': { title: 'Roulette de Movie – Suporte' },
-  es:      { title: 'Roulette de Movie – Soporte' }
+  en:      { title: '{APP_NAME} – Support' },
+  ar:      { title: '{APP_NAME} – الدعم' },
+  'zh-Hans': { title: '{APP_NAME} – 支持' },
+  nl:      { title: '{APP_NAME} – Ondersteuning' },
+  fr:      { title: '{APP_NAME} – Assistance' },
+  de:      { title: '{APP_NAME} – Support' },
+  it:      { title: '{APP_NAME} – Supporto' },
+  ko:      { title: '{APP_NAME} – 지원' },
+  'pt-PT': { title: '{APP_NAME} – Suporte' },
+  es:      { title: '{APP_NAME} – Soporte' }
 };

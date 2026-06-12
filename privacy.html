@@ -141,6 +141,7 @@
 
   <!-- locale: language list (dropdown source of truth) -->
   <script src="locale/languages.js"></script>
+  <script src="locale/app-name.js"></script>
 
   <!-- locale: privacy page sections -->
   <script src="locale/privacy/meta.js"></script>
@@ -270,6 +271,7 @@
 
     document.addEventListener('DOMContentLoaded', function () {
       var lang = window.__lang;
+      var appName = APP_NAME[lang] || APP_NAME['en'];
 
       // Build dropdown from languages.js
       var sel = document.getElementById('langSelect');
@@ -287,7 +289,7 @@
       });
 
       // Set document title from meta section
-      document.title = (L_privacy_meta[lang] || L_privacy_meta['en']).title;
+      document.title = (L_privacy_meta[lang] || L_privacy_meta['en']).title.replace(/\{APP_NAME\}/g, appName);
 
       // Apply plain-text strings
       document.querySelectorAll('[data-i18n]').forEach(function (el) {
@@ -296,7 +298,7 @@
         var sectionData = SECTIONS[section];
         if (!sectionData) return;
         var t = sectionData[lang] || sectionData['en'];
-        if (t && t[key] !== undefined) el.textContent = t[key];
+        if (t && t[key] !== undefined) el.textContent = t[key].replace(/\{APP_NAME\}/g, appName);
       });
 
       // Apply HTML strings (contain markup like <strong>)
@@ -306,7 +308,7 @@
         var sectionData = SECTIONS[section];
         if (!sectionData) return;
         var t = sectionData[lang] || sectionData['en'];
-        if (t && t[key] !== undefined) el.innerHTML = t[key];
+        if (t && t[key] !== undefined) el.innerHTML = t[key].replace(/\{APP_NAME\}/g, appName);
       });
 
       // Append lang param to support link when not English
