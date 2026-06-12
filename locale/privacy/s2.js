@@ -56,13 +56,13 @@ var L_privacy_s2 = {
     intro:   'Nous ne collectons pas :',
     li1:     'Votre nom, adresse e-mail ou identifiants de compte',
     li2:     'Données de localisation ou GPS',
-    li3:     'Identifiants d'appareil (IDFA, IDFV, nom de l'appareil)',
+    li3:     'Identifiants d\'appareil (IDFA, IDFV, nom de l\'appareil)',
     li4:     'Contacts, calendrier ou données de santé',
     li5:     'Entrée caméra ou microphone',
     li6:     'Contenu du presse-papiers',
     li7:     'Rapports de plantage ou données de diagnostic envoyés',
-    li8:     'Données d'analyse d'utilisation ou comportementales',
-    outro:   'L'application ne demande <strong>aucune autorisation d'appareil</strong> — elle ne demande pas l'accès à votre caméra, photos, localisation, contacts, microphone, Bluetooth ou toute autre fonctionnalité sensible.'
+    li8:     'Données d\'analyse d\'utilisation ou comportementales',
+    outro:   'L\'application ne demande <strong>aucune autorisation d\'appareil</strong> — elle ne demande pas l\'accès à votre caméra, photos, localisation, contacts, microphone, Bluetooth ou toute autre fonctionnalité sensible.'
   },
   de: {
     heading: '2. Informationen, die wir nicht erheben',
@@ -80,15 +80,15 @@ var L_privacy_s2 = {
   it: {
     heading: '2. Informazioni che non raccogliamo',
     intro:   'Non raccogliamo:',
-    li1:     'Il tuo nome, indirizzo e-mail o credenziali dell'account',
+    li1:     'Il tuo nome, indirizzo e-mail o credenziali dell\'account',
     li2:     'Dati di posizione o GPS',
     li3:     'Identificatori del dispositivo (IDFA, IDFV, nome del dispositivo)',
     li4:     'Contatti, calendario o dati sulla salute',
     li5:     'Input da fotocamera o microfono',
     li6:     'Contenuto degli appunti',
     li7:     'Rapporti di arresto anomalo o dati diagnostici inviati a noi',
-    li8:     'Dati di analisi dell'utilizzo o comportamentali',
-    outro:   'L'app non richiede <strong>nessun permesso del dispositivo</strong> — non chiede accesso alla fotocamera, alle foto, alla posizione, ai contatti, al microfono, al Bluetooth o a qualsiasi altra funzionalità sensibile.'
+    li8:     'Dati di analisi dell\'utilizzo o comportamentali',
+    outro:   'L\'app non richiede <strong>nessun permesso del dispositivo</strong> — non chiede accesso alla fotocamera, alle foto, alla posizione, ai contatti, al microfono, al Bluetooth o a qualsiasi altra funzionalità sensibile.'
   },
   ko: {
     heading: '2. 수집하지 않는 정보',

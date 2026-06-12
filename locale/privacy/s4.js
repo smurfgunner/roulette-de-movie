@@ -33,11 +33,11 @@ var L_privacy_s4 = {
   },
   fr: {
     heading: '4. Requêtes réseau — Recherche de films',
-    body:    'Lorsque vous recherchez un film, le texte saisi est envoyé comme requête de recherche à un service de métadonnées de films tiers pour retourner les résultats correspondants. C'est la seule requête réseau sortante effectuée par l'application.',
+    body:    'Lorsque vous recherchez un film, le texte saisi est envoyé comme requête de recherche à un service de métadonnées de films tiers pour retourner les résultats correspondants. C\'est la seule requête réseau sortante effectuée par l\'application.',
     li1:     '<strong>Ce qui est envoyé :</strong> Le texte de votre requête de recherche',
     li2:     '<strong>Ce qui est reçu :</strong> Titres de films, années de sortie et URL des affiches',
     li3:     '<strong>Objectif :</strong> Trouver et afficher les films correspondants pour que vous puissiez les ajouter à votre collection',
-    outro:   'Aucune information personnelle n'est incluse dans ces requêtes — uniquement le texte que vous saisissez dans le champ de recherche.'
+    outro:   'Aucune information personnelle n\'est incluse dans ces requêtes — uniquement le texte que vous saisissez dans le champ de recherche.'
   },
   de: {
     heading: '4. Netzwerkanfragen — Filmsuche',
@@ -49,7 +49,7 @@ var L_privacy_s4 = {
   },
   it: {
     heading: '4. Richieste di rete — Ricerca film',
-    body:    'Quando cerchi un film, il testo che digiti viene inviato come query di ricerca a un servizio di metadati cinematografici di terze parti per restituire i risultati corrispondenti. Questa è l'unica richiesta di rete in uscita effettuata dall'app.',
+    body:    'Quando cerchi un film, il testo che digiti viene inviato come query di ricerca a un servizio di metadati cinematografici di terze parti per restituire i risultati corrispondenti. Questa è l\'unica richiesta di rete in uscita effettuata dall\'app.',
     li1:     '<strong>Cosa viene inviato:</strong> Il testo della tua query di ricerca',
     li2:     '<strong>Cosa viene ricevuto:</strong> Titoli di film, anni di uscita e URL delle locandine',
     li3:     '<strong>Scopo:</strong> Trovare e mostrare i film corrispondenti per aggiungerli alla tua collezione',

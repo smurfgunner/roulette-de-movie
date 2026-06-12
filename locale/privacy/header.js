@@ -22,7 +22,7 @@ var L_privacy_header = {
   fr: {
     pageTitle: 'Politique de confidentialité',
     updated:   'Dernière mise à jour : 30 mai 2026',
-    intro:     'Cette politique de confidentialité décrit la manière dont Roulette de Movie traite vos informations. Nous estimons que la vie privée est un droit, c'est pourquoi cette politique est volontairement simple : nous ne collectons, ne partageons ni ne vendons vos données personnelles.'
+    intro:     'Cette politique de confidentialité décrit la manière dont Roulette de Movie traite vos informations. Nous estimons que la vie privée est un droit, c\'est pourquoi cette politique est volontairement simple : nous ne collectons, ne partageons ni ne vendons vos données personnelles.'
   },
   de: {
     pageTitle: 'Datenschutzerklärung',

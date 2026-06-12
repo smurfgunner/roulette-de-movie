@@ -17,7 +17,7 @@ var L_privacy_s1 = {
   },
   fr: {
     heading: '1. Aperçu',
-    body:    'Roulette de Movie est une application de sélection de films qui vous permet de créer une liste de films à regarder et de faire tourner une roue pour choisir votre prochain film. Toutes les données que vous créez dans l'application restent sur votre appareil. Nous n'exploitons aucun serveur, ne créons aucun compte utilisateur et ne stockons aucune information vous concernant à distance.'
+    body:    'Roulette de Movie est une application de sélection de films qui vous permet de créer une liste de films à regarder et de faire tourner une roue pour choisir votre prochain film. Toutes les données que vous créez dans l\'application restent sur votre appareil. Nous n\'exploitons aucun serveur, ne créons aucun compte utilisateur et ne stockons aucune information vous concernant à distance.'
   },
   de: {
     heading: '1. Überblick',
@@ -25,7 +25,7 @@ var L_privacy_s1 = {
   },
   it: {
     heading: '1. Panoramica',
-    body:    'Roulette de Movie è un'app per la scelta dei film che ti permette di creare una lista personale e girare una ruota per scegliere cosa guardare dopo. Tutti i dati che crei nell'app rimangono sul tuo dispositivo. Non gestiamo server, non creiamo account utente e non archiviamo informazioni su di te da remoto.'
+    body:    'Roulette de Movie è un\'app per la scelta dei film che ti permette di creare una lista personale e girare una ruota per scegliere cosa guardare dopo. Tutti i dati che crei nell\'app rimangono sul tuo dispositivo. Non gestiamo server, non creiamo account utente e non archiviamo informazioni su di te da remoto.'
   },
   ko: {
     heading: '1. 개요',

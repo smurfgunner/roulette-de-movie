@@ -21,7 +21,7 @@ var L_index_privacy = {
   },
   fr: {
     heading: 'Confidentialité',
-    body:    'Roulette de Movie ne collecte aucune donnée personnelle. Votre liste de films est entièrement stockée sur votre appareil et n'est jamais envoyée à un serveur.',
+    body:    'Roulette de Movie ne collecte aucune donnée personnelle. Votre liste de films est entièrement stockée sur votre appareil et n\'est jamais envoyée à un serveur.',
     link:    'Lire la politique de confidentialité complète →'
   },
   de: {
@@ -32,7 +32,7 @@ var L_index_privacy = {
   it: {
     heading: 'Privacy',
     body:    'Roulette de Movie non raccoglie dati personali. La tua lista di film è archiviata interamente sul tuo dispositivo e non viene mai inviata a nessun server.',
-    link:    'Leggi l'informativa sulla privacy completa →'
+    link:    'Leggi l\'informativa sulla privacy completa →'
   },
   ko: {
     heading: '개인정보 보호',

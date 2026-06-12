@@ -1,7 +1,7 @@
 var L_index_support = {
   en: {
     heading:  'Get Support',
-    body:     'Have a question, found a bug, or want to share feedback? Send an email and I'll get back to you as soon as possible.',
+    body:     'Have a question, found a bug, or want to share feedback? Send an email and I\'ll get back to you as soon as possible.',
     emailBtn: 'Email Support'
   },
   ar: {
@@ -22,7 +22,7 @@ var L_index_support = {
   fr: {
     heading:  'Assistance',
     body:     'Vous avez une question, trouvé un bug ou souhaitez partager un retour ? Envoyez un e-mail et je vous répondrai dès que possible.',
-    emailBtn: 'Contacter l'assistance'
+    emailBtn: 'Contacter l\'assistance'
   },
   de: {
     heading:  'Support',
@@ -31,7 +31,7 @@ var L_index_support = {
   },
   it: {
     heading:  'Supporto',
-    body:     'Hai una domanda, hai trovato un bug o vuoi condividere un feedback? Invia un'e-mail e ti risponderò il prima possibile.',
+    body:     'Hai una domanda, hai trovato un bug o vuoi condividere un feedback? Invia un\'e-mail e ti risponderò il prima possibile.',
     emailBtn: 'Contatta il supporto'
   },
   ko: {
